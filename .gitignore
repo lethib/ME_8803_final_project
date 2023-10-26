@@ -1,3 +1,6 @@
+# Personal gitignore
+guidelines/**
+
 *.bundle.*
 lib/
 node_modules/
