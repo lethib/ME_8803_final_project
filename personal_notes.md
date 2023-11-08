@@ -23,7 +23,7 @@ Variance can lead to overfitting, in which small fluctuations in the training se
 
 ### Bias-Variance Tradeoff
 
-When building a supervised machine-learning algorithm, the goal is to achieve low bias and variance for the most accurate predictions. We must do this while keeping underfitting and overfittingExternal link:open_in_new in mind. A model that exhibits small variance and high bias will underfit the target, while a model with high variance and little bias will overfit the target.
+When building a supervised machine-learning algorithm, the goal is to achieve low bias and variance for the most accurate predictions. We must do this while keeping underfitting and overfitting in mind. A model that exhibits small variance and high bias will underfit the target, while a model with high variance and little bias will overfit the target.
 
 A model with high variance may represent the data set accurately but could lead to overfitting to noisy or otherwise unrepresentative training data. In comparison, a model with high bias may underfit the training data due to a simpler model that overlooks regularities in the data.
 
