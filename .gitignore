@@ -1,6 +1,8 @@
 # Personal gitignore
 guidelines/**
 img/**
+EDA/README.txt
+EDA/html/**
 
 *.bundle.*
 lib/
