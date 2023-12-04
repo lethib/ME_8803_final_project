@@ -15,4 +15,4 @@ After some Explanatory Data Analysis (see [EDA](./EDA/)), I have listed 2 possib
 - Predicting the CO2 emissions
 - Predicting the primary energy consumption per capita
 
-Many projects are predicting the CO2 emissions, so I will focus on the seconf objective. That's why in the modeling part of the project, I will focus on predicting the primary energy consumption per capita.
+Many projects are predicting the CO2 emissions, so I will focus on the second objective. That's why in the modeling part of the project, I will focus on predicting the primary energy consumption per capita.
