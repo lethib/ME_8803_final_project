@@ -3,6 +3,11 @@ guidelines/**
 img/**
 EDA/README.txt
 EDA/html/**
+feature_engineering/*.html
+modeling/html/**
+README.txt
+create_zip.sh
+*.zip
 
 *.bundle.*
 lib/
