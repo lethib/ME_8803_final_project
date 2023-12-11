@@ -1,3 +1,0 @@
-Here's the link for my dataset : https://www.kaggle.com/datasets/anshtanwar/global-data-on-sustainable-energy/data
-
-It is showcasing sustainable energy indicators and other useful factors across all countries from 2000 to 2020. 
