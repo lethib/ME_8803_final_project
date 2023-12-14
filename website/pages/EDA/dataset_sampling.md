@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Dataset sampling"
-date: 2023-12-13 14:45:35 -0500
+permalink: /EDA/dataset_sampling
 ---
 
 The aim of this notebook is to provide information about features sampling in order to determine which response features are more suitable for the project.
@@ -93,7 +93,7 @@ df_co2
     }
 
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe smallest">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -269,7 +269,7 @@ df_pe
     }
 
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe smallest">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -474,7 +474,7 @@ normalized_df_co2
     }
 
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe smallest">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -640,7 +640,7 @@ normalized_df_pe
     }
 
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe smallest">
   <thead>
     <tr style="text-align: right;">
       <th></th>

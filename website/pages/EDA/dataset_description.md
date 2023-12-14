@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Dataset description"
-date: 2023-12-13 14:45:35 -0500
+permalink: /EDA/dataset_description
 ---
 
 The aim of this notebook is to provide some description of the dataset that I will use for my project.
@@ -66,7 +66,7 @@ df
     }
 
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe smallest">
   <thead>
     <tr style="text-align: right;">
       <th></th>

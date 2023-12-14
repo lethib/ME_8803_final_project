@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Next Steps"
-date: 2023-12-13 14:45:35 -0500
+permalink: /EDA/next_steps
 ---
 
 This notebook aims to answer the question 4 of the Homework.
