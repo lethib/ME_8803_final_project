@@ -4,8 +4,6 @@ title: "Next Steps"
 permalink: /EDA/next_steps
 ---
 
-This notebook aims to answer the question 4 of the Homework.
-
 ## 1. Technical/Statistical purpose of each process model
 
 Before training any model, a step of data cleaning is necessary to deal with missing values. There are several ways to deal with that:

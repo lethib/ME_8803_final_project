@@ -4,8 +4,6 @@ title: "Dataset sampling"
 permalink: /EDA/dataset_sampling
 ---
 
-The aim of this notebook is to provide information about features sampling in order to determine which response features are more suitable for the project.
-
 ```python
 import pandas as pd
 import seaborn as sns
@@ -53,7 +51,7 @@ Now, we can set an objective for the project. We would like to predict:
 
 These are mainly regression problems.
 
-Predicting the percentage of Renewables energy as primary energy could have been also interesting to do but the response feature is so poorly filled that we can't use it as a response feature (cf the [dataset description notebook](./dataset_description.ipynb)).
+Predicting the percentage of Renewables energy as primary energy could have been also interesting to do but the response feature is so poorly filled that we can't use it as a response feature (cf the [dataset description section](./dataset_description.md/#5-missing-values)).
 
 ### 2. Feature selection
 
@@ -233,7 +231,7 @@ For this dataset, we will have:
 | Land Area (Km2)                     |    X    |          |
 | Value_co2_emissions_kt_by_country   |         |    X     |
 
-Remember also that according to the [dataset description](./dataset_description.ipynb), the `Value_co2_emissions_kt_by_country` has some missing values that we will have to deal with (drop rows or impute values).
+Remember also that according to the [dataset description](./dataset_description.md/#5-missing-values), the `Value_co2_emissions_kt_by_country` has some missing values that we will have to deal with (drop rows or impute values).
 
 #### Selection for the Primary energy consumption per capita
 
@@ -779,3 +777,7 @@ plt.savefig("../img/pairplot_pe.png", dpi=200, bbox_inches="tight")
 Only by removing 5% of the outliers, we can see that the distribution of the continuous response feature is better ! Moreover, the shape of this distribution looks like a **Log-normal distribution**.
 
 There is also more variation across all these features to support statistical modeling than for the CO2 emissions prediction problem, which is good.
+
+<div class="next-section">
+  <a href="{{ site.baseurl }}/EDA/next_steps">Next Steps section >>></a>
+</div>

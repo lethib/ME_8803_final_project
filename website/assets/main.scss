@@ -18,3 +18,10 @@
   table.smallest {
     font-size: 13px;
   }
+
+  div.next-section {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 18px;
+    font-weight: 700;
+  }

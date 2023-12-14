@@ -4,8 +4,6 @@ title: "Dataset description"
 permalink: /EDA/dataset_description
 ---
 
-The aim of this notebook is to provide some description of the dataset that I will use for my project.
-
 ## 1. How were the data obtained ?
 
 ### Data sources
@@ -568,3 +566,7 @@ Features that are not heavily sparsed might be imputed in the process of modelin
 - Low-carbon electricity (% electricity)
 - GDP growth
 - GDP per capita
+
+<div class="next-section">
+  <a href="{{ site.baseurl }}/EDA/dataset_sampling">Dataset Sampling section >>></a>
+</div>
