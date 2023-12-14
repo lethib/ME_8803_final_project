@@ -39,7 +39,7 @@ plt.savefig("../img/correlation_matrix.png", dpi=200, bbox_inches="tight")
 ```
 
 <p align="center">
-  <img src="../../assets/img/dataset_sampling_5_0.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_sampling_5_0.png" />
 </p>
 
 We can clearly see that some features are highly corrolated to each other but other are not. For instance the `Financial flow to developing countries (US$)` has only poor correlation with all other features. It would be hard to predict this feature based on the other ones. This is the same for the `gdp_growth`, `Longitude`, `Energy intensity level of primary energy` features. It could have been interesting to work with these features but we will not use them for the project.
@@ -586,7 +586,7 @@ sns.pairplot(normalized_df_co2, height=4, kind="scatter", diag_kind="kde", diag_
     <seaborn.axisgrid.PairGrid at 0x7fc490e0bf70>
 
 <p align="center">
-  <img src="../../assets/img/dataset_sampling_29_1.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_sampling_29_1.png" />
 </p>
 
 We can clearly see correlations on scatter plot between features. For feature distribution, is hard to see because countries that are emitting a lot of CO2 are so few compared to those who are not. Computing logarithmic values of the dataset could be a possibility but many samples have 0 as value for the `Electricity from nuclear (TWh)` feature. As $log(0)$ is not defined, we can't use this method. Let's try to remove some outliers.
@@ -607,7 +607,7 @@ plt.savefig("../img/pairplot_co2.png", dpi=200, bbox_inches="tight")
     (3059, 5)
 
 <p align="center">
-  <img src="../../assets/img/dataset_sampling_31_1.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_sampling_31_1.png" />
 </p>
 
 This is better ! We still have enough samples to train our model and tt is a bit easier to see that our data are quite randomly sampled. We have continuous samples and it might seems that the response feature is following a **Weibull** or **Log-normal** distribution.
@@ -752,7 +752,7 @@ sns.pairplot(normalized_df_pe, height=4, kind="scatter", diag_kind="kde", diag_k
     <seaborn.axisgrid.PairGrid at 0x7fc4a181e8e0>
 
 <p align="center">
-  <img src="../../assets/img/dataset_sampling_35_1.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_sampling_35_1.png" />
 </p>
 
 For this problem, it is easier to see that all the input features are well distributed: our data are more randomly sampled than for the CO2 problem. However, it is a bit more difficult to see that for the response feature. We can try to remove some outliers to have a better distribution.
@@ -773,7 +773,7 @@ plt.savefig("../img/pairplot_pe.png", dpi=200, bbox_inches="tight")
     (3466, 5)
 
 <p align="center">
-  <img src="../../assets/img/dataset_sampling_37_1.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_sampling_37_1.png" />
 </p>
 
 Only by removing 5% of the outliers, we can see that the distribution of the continuous response feature is better ! Moreover, the shape of this distribution looks like a **Log-normal distribution**.

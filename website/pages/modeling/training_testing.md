@@ -849,7 +849,9 @@ To evaluate our regression models, we will use two metrics:
 
 - **Mean Absolute Error (MAE)**: The mean absolute error (MAE) is a quantity used to measure how close forecasts or predictions are to the eventual outcomes. One good thing about the MAE, is that it is robust to outliers. So, we can use it to compare our models with and without outliers. The mean absolute error is given by the formula:
 
-$$$$MAE = \frac{1}{n}\sum\_{i=1}^{n}|y_i - \hat{y}\_i|$$$$
+$$
+MAE = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}\_i|
+$$
 
 - **Distribution plot of Residuals**: The distribution plot of residuals is a good way to visualize the performance of our model. The residuals are the difference between the true values of y and the predicted values of y. So, if our model is good, the residuals should be randomly normally distributed around 0.
 
@@ -874,7 +876,7 @@ plt.savefig('../img/LR_residuals_distribution.png', dpi=200, bbox_inches='tight'
 ```
 
 <p align="center">
-  <img src="../../assets/img/training_testing_27_0.png" />
+  <img src="{{ site.baseurl }}/assets/img/training_testing_27_0.png" />
 </p>
 
 ```python
@@ -946,7 +948,7 @@ plt.savefig('../img/EN_residuals_distribution.png', dpi=200, bbox_inches='tight'
 ```
 
 <p align="center">
-  <img src="../../assets/img/training_testing_30_0.png" />
+  <img src="{{ site.baseurl }}/assets/img/training_testing_30_0.png" />
 </p>
 
 ```python
@@ -1018,7 +1020,7 @@ plt.savefig('../img/LSVR_residuals_distribution.png', dpi=200, bbox_inches='tigh
 ```
 
 <p align="center">
-  <img src="../../assets/img/training_testing_33_0.png" />
+  <img src="{{ site.baseurl }}/assets/img/training_testing_33_0.png" />
 </p>
 
 ```python

@@ -510,7 +510,7 @@ plt.title('Missing values for each feature in the dataset', fontweight='bold', f
 ```
 
 <p align="center">
-  <img src="../../assets/img/dataset_description_19_1.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_description_19_1.png" />
 </p>
 
 We can clearly see that some features are densed and other are sparsed. Heavily sparsed features (features that we might drop) are the following ones:
@@ -544,7 +544,7 @@ fig.suptitle('Number of values for each feature in the dataset by country', font
 ```
 
 <p align="center">
-  <img src="../../assets/img/dataset_description_23_1.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_description_23_1.png" />
 </p>
 
 We can pinpoint some countries that gave a lot of missing values for all the features:
