@@ -42,7 +42,7 @@ def splitDataset(df, test_size=0.15, should_have_validation_set=True):
 
 ## Linear Regression
 
-As seen in the [ML algorithm selection notebook](ML_algorithm_selection.ipynb), the linear model does not have any hyperparameters to tune. Therefore, cross-validation is not required. We can split our datasets into training, testing and validation sets like so:
+As seen in the [ML algorithm selection section](./ML_algorithm_selection.md/#21-linear-regression), the linear model does not have any hyperparameters to tune. Therefore, cross-validation is not required. We can split our datasets into training, testing and validation sets like so:
 
 - Training set: 80%
 - Testing set: 20%
@@ -259,7 +259,7 @@ LR_coef_nor_wo.round(3)
 
 ## Elastic Net
 
-As seen in the [ML algorithm selection notebook](ML_algorithm_selection.ipynb), the Elastic Net model do have 2 hyperparameters to tune. Therefore, we can use cross-validation to find the best combination of hyperparameters. The following procedure is followed for each of the k folds:
+As seen in the [ML algorithm selection section](./ML_algorithm_selection.md/#22-elastic-net), the Elastic Net model do have 2 hyperparameters to tune. Therefore, we can use cross-validation to find the best combination of hyperparameters. The following procedure is followed for each of the k folds:
 
 - A model is trained using k-1 of the folds as training data;
 - The resulting model is validated on the remaining part of the data (i.e., it is used as a test set to compute a performance measure such as accuracy).
@@ -506,7 +506,7 @@ EN_model_nor_wo_coef.round(3)
 
 ## Linear SVR
 
-As seen in the [ML algorithm selection notebook](ML_algorithm_selection.ipynb), the Elastic Net model do have 4 hyperparameters to tune. However, is those 4 hyperparameters, only 1 remains ($$c$$ hyperparameter) totally unknown for us. Other hyperparameters are known:
+As seen in the [ML algorithm selection section](./ML_algorithm_selection.md/#23-linear-svr), the Elastic Net model do have 4 hyperparameters to tune. However, is those 4 hyperparameters, only 1 remains ($$c$$ hyperparameter) totally unknown for us. Other hyperparameters are known:
 
 - The loss function: `epsilon_insensitive` because we want to use standard Support Vector Regression;
 

@@ -4,11 +4,9 @@ title: "ML Algorithm Selection"
 permalink: /modeling/ML_algorithm_selection
 ---
 
-The aim of thie notebook is to provide information about the Machine Learning algorithms that are used in this project. A deeper understanding of the choice of the algorithms is provided in the [next steps notebook](../EDA/next_steps.ipynb).
-
 ## 1. Kind of ML algorithms
 
-Still according to the [next steps notebook](../EDA/next_steps.ipynb), the kind of ML algorithms that are used in this project are linear regression algorithms. This has been motivated by the fact that all of our features are numerical (input and output) and that our features are well correlated with the output, which pushes me to use linear algorithms (see [data sampling](../EDA/dataset_sampling.ipynb) for more information).
+Still according to the [next steps section](../EDA/next_steps.md), the kind of ML algorithms that are used in this project are linear regression algorithms. This has been motivated by the fact that all of our features are numerical (input and output) and that our features are well correlated with the output, which pushes me to use linear algorithms (see [data sampling](../EDA/dataset_sampling.md/#1-feature-correlation) for more information).
 
 To recall, the algorithms that are used are:
 
@@ -78,3 +76,7 @@ So, the total number of parameters in Linear SVR includes both the coefficients 
 ## 3. Best Algorithm at first sight
 
 All of the models do not have a huge number of parameters. As our feature are highly correlated (meaning that a strong linear relationship exits between the input and the output), I think that the Linear Regression algorithm will be the best one as it is the simplest one. However, Elastic Net and Linear SVR can be good alternatives as they can be more robust to outliers (linear regression can easily lead to overfitting). They also are not that complicated to understand and tune. It would be interesting to compare the results of the 3 algorithms.
+
+<div class="next-section">
+  <a href="{{ site.baseurl }}/modeling/training_testing">Training / Testing section >>></a>
+</div>
