@@ -15,9 +15,13 @@ The aim of this section is to provide some description of the dataset that I wil
 We will tackle the following questions:
 
 - How were the data obtained? Experiments? Simulations? A mixture?
+
 - What kinds of data are included? e.g., Scalar valued data? Time series? Spectral data? Image data? etc.
+
 - What are all of the different features (potential factors, cofactors, and responses) of the dataset?
+
 - What is the overall dimension of the data?
+
 - Is the dataset dense, sparse, or are certain features dense while others are sparse?
 
 ### 2. [Dataset Sampling](./dataset_sampling.md)
