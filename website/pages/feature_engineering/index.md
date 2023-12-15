@@ -15,9 +15,9 @@ import seaborn as sns
 
 ## 1. Supervised or Unsupervised Learning?
 
-As discussed in the [next_steps notebook](../EDA/next_steps.ipynb), the goal of this project is to predict the **Primary Energy consumption per Capita** using regression algorithms. Regressions algorithm are supervised Machine Learning algorithms.
+As discussed in the [next_steps section](../EDA/next_steps.md), the goal of this project is to predict the **Primary Energy consumption per Capita** using regression algorithms. Regressions algorithm are supervised Machine Learning algorithms.
 
-Inputs and outputs features have already been determined in [this notebook](../EDA/next_steps.ipynb):
+Inputs and outputs features have already been determined :
 
 | Features                                                         | Factor | Cofactor | Response |
 | ---------------------------------------------------------------- | :----: | :------: | :------: |
@@ -31,17 +31,17 @@ Inputs and outputs features have already been determined in [this notebook](../E
 
 Based on the Exploratory Data Analysis, I have saved 3 different datasets to train my regression models:
 
-1. [`pe_dataset.csv`](../data/pe/pe_dataset.csv): This dataset contains all the rows of the main dataset but has only targetted features (inputs and outputs + country name and year).
-2. [`normalized_pe_dataset.csv`](../data/pe/normalized_pe_dataset.csv): Same as `pe_dataset.csv` but with normalized numerical features.
-3. [`normalized_pe_dataset_without_outliers.csv`](../data/pe/normalized_pe_dataset_without_outliers.csv): Same as `normalized_pe_dataset.csv` but without top outliers.
+1. [`pe_dataset.csv`](https://github.com/lethib/PE_Consumption/blob/main/data/pe/pe_dataset.csv): This dataset contains all the rows of the main dataset but has only targetted features (inputs and outputs + country name and year).
+2. [`normalized_pe_dataset.csv`](https://github.com/lethib/PE_Consumption/blob/main/data/pe/normalized_pe_dataset.csv): Same as `pe_dataset.csv` but with normalized numerical features.
+3. [`normalized_pe_dataset_without_outliers.csv`](https://github.com/lethib/PE_Consumption/blob/main/data/pe/normalized_pe_dataset_without_outliers.csv): Same as `normalized_pe_dataset.csv` but without top outliers.
 
-It will be interesting to watch how the models perform on each dataset. Data features were not collected from experiments or simulations but based on administratives sources, measurements and surveys. More details about that in the [dataset description notebook](../EDA/dataset_description.ipynb).
+It will be interesting to watch how the models perform on each dataset. Data features were not collected from experiments or simulations but based on administratives sources, measurements and surveys. More details about that in the [dataset description section](../EDA/dataset_description.md/#1-how-were-the-data-obtained).
 
 No Machine Learning models, no data augmentation and PCA have been used to derive the features. Daata features are the raw values from the main dataset that has only been normalized for the second and third datasets.
 
 ## 3. Features types
 
-As discussed in the [`datset_sampling` notebook](../EDA/dataset_sampling.ipynb), all of the features (inputs and outputs) are modeled as continuous distributions (I don't take into account the country name and the year which are not relevant). Moreover, all of the features are numerical.
+As discussed in the [datset sampling section](../EDA/dataset_sampling.md/#2-feature-selection), all of the features (inputs and outputs) are modeled as continuous distributions (I don't take into account the country name and the year which are not relevant). Moreover, all of the features are numerical.
 
 ## 4. Data Cleaning
 
