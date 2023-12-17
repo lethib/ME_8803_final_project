@@ -518,7 +518,7 @@ We can clearly see that some features are densed and other are sparsed. Heavily 
 - Value_co2_emissions_kt_by_country
 - Renewables (% equivalent primary energy)
 
-Let's not forget that the entries of the dataset can easily be grouped by countries. We can guess that those thin lines of missing values that we see in the figure might correspond to some years where we don't have data. Thick block of missing values could mean that the country doesn't have any data for this feature.
+Let's not forget that the entries of the dataset can easily be grouped by countries. **We can guess that those thin lines of missing values that we see in the figure might correspond to some years where we don't have data. Thick block of missing values could mean that the country doesn't have any data for this feature**.
 
 The `groupby.count()` pandas' method compute count of group, excluding missing values. We know that the dataset is providing 21 years of data for each country. So, we can use this method to check if we have missing values for some countries.
 
@@ -552,13 +552,13 @@ We can pinpoint some countries that gave a lot of missing values for all the fea
 - Serbia
 - South Sudan
 
-We also have features that have the same amount of missing values across all the countries. This would mean that those data were not collected for a specific range of years. The features that have this behavior are the following ones:
+**We also have features that have the same amount of missing values across all the countries. This would mean that those data were not collected for a specific range of years**. The features that have this behavior are the following ones:
 
 - Renewable energy share in the total final energy consumption
 - Energy intensity level of primary energy (MJ/$2017 PPP GDP)
 - Value_co2_emissions_kt_by_country
 
-Features that are not heavily sparsed might be imputed in the process of modeling:
+Features that are not heavily sparsed **might be imputed in the process of modeling**:
 
 - Access to clean fuels for cooking
 - Electricity from nuclear (TWh)

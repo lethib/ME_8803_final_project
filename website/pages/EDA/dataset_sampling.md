@@ -24,7 +24,7 @@ df = pd.read_csv("../data/global-data-on-sustainable-energy.csv")
 
 ### 1. Feature Correlation
 
-Correlation coefficients are indicators of the strength of the linear relationship between two different variables. A bigger circle means a higher correlation. The color of the circle indicates the sign of the correlation. A negative correlation (indicated by a blue color) means that the two variables move in opposite directions (when a variable is increasing, the other is decreasing). A positive correlation (indicated by a red color) means that the two variables move in the same direction (when a variable is increasing the other is also increasing).
+Correlation coefficients are **indicators of the strength of the linear relationship between two different variables**. A bigger circle means a higher correlation. The color of the circle indicates the sign of the correlation. A negative correlation (indicated by a blue color) means that the two variables move in opposite directions (when a variable is increasing, the other is decreasing). A positive correlation (indicated by a red color) means that the two variables move in the same direction (when a variable is increasing the other is also increasing).
 
 ```python
 plt.figure(figsize=(20,20))
