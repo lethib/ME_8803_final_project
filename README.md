@@ -10,7 +10,7 @@ It can be obtained from [Kaggle](https://www.kaggle.com/datasets/anshtanwar/glob
 
 ## Objectives 🎯
 
-After some _Explanatory Data Analysis_ (see [EDA](./EDA/)), I have listed 2 possible ojectives for this project from the [dataset_sampling notebook](/EDA/dataset_sampling.ipynb):
+After some _Exploratory Data Analysis_ (see [EDA](./EDA/)), I have listed 2 possible ojectives for this project from the [dataset_sampling notebook](/EDA/dataset_sampling.ipynb):
 
 - Predicting the CO2 emissions
 - Predicting the primary energy consumption per capita
