@@ -18,7 +18,7 @@ To recall, the algorithms that are used are:
 
 ### 2.1. Linear Regression
 
-LinearRegression fits a linear model with coefficients w = (w1, …, wp) to minimize the residual sum of squares between the observed targets in the dataset, and the targets predicted by the linear approximation. For a simple linear regression with one variable, the equation is typically represented as $$y = \beta_0 + \beta_1 x + \epsilon$$ where:
+LinearRegression fits a linear model with coefficients w = (w1, …, wp) **to minimize the residual sum of squares** between the observed targets in the dataset, and the targets predicted by the linear approximation. For a simple linear regression with one variable, the equation is typically represented as $$y = \beta_0 + \beta_1 x + \epsilon$$ where:
 
 - $$y$$ is the output variable,
 - $$x$$ is the input variable,
@@ -26,7 +26,7 @@ LinearRegression fits a linear model with coefficients w = (w1, …, wp) to mini
 - $$\beta_1$$ is the coefficient for the input variable $$x$$,
 - $$\epsilon$$ represents the error term.
 
-In this case, we have two parameters: $$\beta_0$$ and $$\beta_1$$. In the case of​ multiple variables in a multiple linear regression, each variable has its own coefficient, and the number of parameters increases accordingly.
+In this case, we have two parameters: $$\beta_0$$ and $$\beta_1$$. In the case of​ multiple variables in a multiple linear regression, **each variable has its own coefficient**, and the number of parameters increases accordingly.
 
 So, for our case, we have 4 input variables, which means that we have 5 parameters to estimate: the intercept term and the coefficients for the 4 input variables.
 
@@ -44,15 +44,15 @@ The Elastic Net algorithm has 2 types of parameters:
 
    Elastic Net has 2 regularization hyperparameters:
 
-   - $$\alpha$$: the constant that multiplies the penalty terms. $$\alpha = 0$$ is equivalent to an ordinary least square regression. For $$\alpha > 0$$, the penalty terms are added to the loss function.
+   - $$\alpha$$: the **constant that multiplies the penalty terms**. $$\alpha = 0$$ is equivalent to an ordinary least square regression. For $$\alpha > 0$$, the penalty terms are added to the loss function.
 
-   - $$l1_{ratio}$$: the Elastic Net mixing parameter. With $$0 <= l1_{ratio} <= 1$$. For $$l1_{ratio} = 0$$ the penalty is an L2 penalty. For $$l1_{ratio} = 1$$ it is an L1 penalty. For $$0 < l1_{ratio} < 1$$, the penalty is a combination of L1 and L2.
+   - $$l1_{ratio}$$: the **Elastic Net mixing parameter**. With $$0 <= l1_{ratio} <= 1$$. For $$l1_{ratio} = 0$$ the penalty is an L2 penalty. For $$l1_{ratio} = 1$$ it is an L1 penalty. For $$0 < l1_{ratio} < 1$$, the penalty is a combination of L1 and L2.
 
 So, the total number of parameters in Elastic Net includes both the coefficients for each independent variable and the hyperparameters. In our case, we will have 5 parameters to estimate and 2 hyperparameters to tune.
 
 ### 2.3. Linear SVR
 
-Linear Support Vector Regression is a model based on Support Vector Machine (SVM) that supports regression. The term _Linear_ means that the Kernel used by the algorithm is a linear one. It is different from traditional linear regression methods as it finds a hyperplane that best fits the data points in a continuous space, instead of fitting a line to the data points.
+Linear Support Vector Regression is a model based on Support Vector Machine (SVM) that supports regression. The term _Linear_ means that the Kernel used by the algorithm is a linear one. It is different from traditional linear regression methods as **it finds a hyperplane that best fits the data points in a continuous space**, instead of fitting a line to the data points.
 
 Linear SVR equation is $$y = c.W^T X + b$$ where:
 
@@ -66,7 +66,7 @@ So for our case, as we have 4 input variables, we will have 5 parameters to esti
 
 Linear SVR has many hyperparameters:
 
-- $$c$$: Controls the trade-off between achieving a low training error and a low testing error. A smaller value of C leads to a wider margin but more classification errors on the training set.
+- $$c$$: Controls the **trade-off between achieving a low training error and a low testing error**. A smaller value of C leads to a wider margin but more classification errors on the training set.
 - The loss function: It is the loss function to be used. It can be one of "epsilon_insensitive" or "squared_epsilon_insensitive".
   - $$\epsilon$$: Epsilon in the epsilon-insensitive loss functions. For epsilon=0, this is equivalent to an ordinary Support Vector Regression.
 - $$tol$$: Tolerance for stopping criterion.

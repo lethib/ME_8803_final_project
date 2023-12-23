@@ -266,7 +266,7 @@ As seen in the [ML algorithm selection section](./ML_algorithm_selection.md/#22-
 
 ![k-fold cross-validation](https://scikit-learn.org/stable/_images/grid_search_cross_validation.png)
 
-The performance measure reported by k-fold cross-validation is then the average of the values computed in the loop
+The performance measure reported by k-fold cross-validation is then t**he average of the values computed in the loop**.
 
 The scikit-learn library provides a built-in version of the Elastic Net algorithm that automatically finds good hyperparameters using cross-validation: [ElasticNetCV](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html#sklearn.linear_model.ElasticNetCV).
 
@@ -613,7 +613,7 @@ print(f'C: {LSVR_model.best_params_}')
     /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/sklearn/svm/_base.py:1225: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
       warnings.warn(
 
-For the global dataset it seam that the algorithm is not able to converge. After some research, the problem seams to be the scale of the data. So, it might work better on my normalized datasets.
+For the global dataset it seems that the algorithm **is not able to converge**. After some research, the problem seems to be the scale of the data. So, it might work better on my normalized datasets.
 
 ```python
 # Train on normalized dataset
@@ -847,13 +847,13 @@ We don't have any really high or low $$R^2$$ scores. It might seems that none of
 
 To evaluate our regression models, we will use two metrics:
 
-- **Mean Absolute Error (MAE)**: The mean absolute error (MAE) is a quantity used to measure how close forecasts or predictions are to the eventual outcomes. One good thing about the MAE, is that it is robust to outliers. So, we can use it to compare our models with and without outliers. The mean absolute error is given by the formula:
+- **Mean Absolute Error (MAE)**: The mean absolute error (MAE) is a quantity used to measure how close forecasts or predictions are to the eventual outcomes. One good thing about the MAE, is that **it is robust to outliers**. So, we can use it to compare our models with and without outliers. The mean absolute error is given by the formula:
 
 $$
 MAE = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}\_i|
 $$
 
-- **Distribution plot of Residuals**: The distribution plot of residuals is a good way to visualize the performance of our model. The residuals are the difference between the true values of y and the predicted values of y. So, if our model is good, the residuals should be randomly normally distributed around 0.
+- **Distribution plot of Residuals**: The distribution plot of residuals is a good way to visualize the performance of our model. The residuals are **the difference between the true values of y and the predicted values of y**. So, if our model is good, the residuals should be **randomly normally distributed around 0**.
 
 ## Linear Regression
 
@@ -1084,9 +1084,9 @@ MAE_results.round(3)
 
 ### Residuals distribution plot
 
-For all of my 8 models, we can see that our residuals are well randomly normally distributed. However for all of our models, we have a huge pike that betray a bit our random behaviour. Moreover, for Linear Regression and Elastic Net models, we have a huge amount of residuals that have a value a slightly higher than 0. For Linear SVR models, this huge pike is present right around 0, which coudl mean that those Linear SVR models are not biased (this is also the case for the other models but not has clear).
+For all of my 8 models, we can see that our residuals are **well randomly normally distributed**. However for all of our models, we have a huge pike that betray a bit our random behaviour. Moreover, for Linear Regression and Elastic Net models, we have a huge amount of residuals that have a value a slightly higher than 0. For Linear SVR models, this huge pike is present right around 0, which could mean that those Linear SVR models **are not biased** (this is also the case for the other models but not has clear).
 
-It is also clear that models that have been trained on normalized datasets without outliers give a better random behaviour of the residuals. Interesting to see that for the Linear SVR one, the plot is a bit left-skewed. This could mean that the model is a bit biased.
+It is also clear that **models that have been trained on normalized datasets without outliers give a better random behaviour of the residuals**. Interesting to see that for the Linear SVR one, the plot is a bit left-skewed. This could mean that the model is a bit biased.
 
 ### Mean Absolute Error
 
@@ -1094,11 +1094,11 @@ According to the MAE, the best model is the Linear SVR trained on the normalized
 
 ### Choice of the best model(s)
 
-According to both the MAE and the residuals distribution plot, the best model (trade-off between accuracy and residuals distribution) model is the Linear SVR trained on the normalized dataset without outliers:
+According to both the MAE and the residuals distribution plot, **the best model** (trade-off between accuracy and residuals distribution) **is the Linear SVR trained on the normalized dataset without outliers**:
 
 - A really nice randomly normally distributed around 0 residuals plot;
 - A really low MAE value compared to other models;
 
 Linear SVR algorithm is not the simplest one to understand and to use (I got troubles with the global dataset). However, it is quite close to the Linear Regression algorithm (hyperplane fitting instead of curve fitting).
 
-Really honorable mention also to the Elastic Net model trained on the normalized dataset. It might be the more robust (ability of a model to perform well on new and unseen data, not just on the data it was trained on) one: it has performed as well as the Linear Regression even though its $$l1_{ratio}$$ hyperparameter is set to 0.1, which means that it has a mix of L1 and L2 penalties.
+**Really honorable mention also to the Elastic Net model trained on the normalized dataset**. It might be **the more robust** (ability of a model to perform well on new and unseen data, not just on the data it was trained on) one: it has performed as well as the Linear Regression even though its $$l1_{ratio}$$ hyperparameter is set to 0.1, which means that it has a mix of L1 and L2 penalties.

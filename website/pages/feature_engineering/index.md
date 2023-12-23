@@ -35,9 +35,9 @@ Based on the Exploratory Data Analysis, I have saved 3 different datasets to tra
 2. [`normalized_pe_dataset.csv`](https://github.com/lethib/PE_Consumption/blob/main/data/pe/normalized_pe_dataset.csv): Same as `pe_dataset.csv` but with normalized numerical features.
 3. [`normalized_pe_dataset_without_outliers.csv`](https://github.com/lethib/PE_Consumption/blob/main/data/pe/normalized_pe_dataset_without_outliers.csv): Same as `normalized_pe_dataset.csv` but without top outliers.
 
-It will be interesting to watch how the models perform on each dataset. Data features were not collected from experiments or simulations but based on administratives sources, measurements and surveys. More details about that in the [dataset description section](../EDA/dataset_description.md/#1-how-were-the-data-obtained).
+It will be interesting to **watch how the models perform on each dataset**. Data features were not collected from experiments or simulations but based on administratives sources, measurements and surveys. More details about that in the [dataset description section](../EDA/dataset_description.md/#1-how-were-the-data-obtained).
 
-No Machine Learning models, no data augmentation and PCA have been used to derive the features. Daata features are the raw values from the main dataset that has only been normalized for the second and third datasets.
+**No Machine Learning models, no data augmentation and PCA have been used to derive the features**. Daata features are the raw values from the main dataset that has only been normalized for the second and third datasets.
 
 ## 3. Features types
 
@@ -65,9 +65,9 @@ df_pe.info()
     dtypes: float64(5), int64(1), object(1)
     memory usage: 199.7+ KB
 
-As the dataset is devided by countries, doing a hot deck imputation directly on all the dataset would be a mistake. For instance, data for _France_ and for _Yemen_ are not comparable. In one hand we have a developed country and in the other hand we have a developing country. Therefore, it is better to do a hot deck imputation for each country separately.
+**As the dataset is devided by countries, doing a hot deck imputation directly on all the dataset would be a mistake**. For instance, data for _France_ and for _Yemen_ are not comparable. In one hand we have a developed country and in the other hand we have a developing country. Therefore, it is better to **do a hot deck imputation for each country separately**.
 
-Due to the fact that we don't have a huge amount of missing values that will be imputed, I have decided to use an interpolation startegy for each country (it might not change a lot the distribution).
+Due to the fact that we don't have a huge amount of missing values that will be imputed, **I have decided to use an interpolation startegy for each country** (it might not change a lot the distribution).
 
 ```python
 countries = df_pe['Entity'].unique()
@@ -79,7 +79,7 @@ for country in countries:
     df_pe[df_pe['Entity'] == country] = df_pe[df_pe['Entity'] == country].interpolate(method='linear', limit_direction='forward', axis=0)
 ```
 
-For other missing values, we will drop the rows that contain them. After this step, we still have more than 3,000 rows which is enough to train our models.
+For other missing values, we will drop the rows that contain them. After this step, **we still have more than 3,000 rows** which is enough to train our models.
 
 ```python
 df_pe = df_pe.dropna(axis=0)
