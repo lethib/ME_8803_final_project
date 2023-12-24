@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "EDA"
-permalink: /EDA
+permalink: EDA/
 ---
 
 Exploratory Data Analysis (EDA) is a critical step in the data analysis process where the main goal is to summarize the main characteristics of a dataset, often with the help of graphical representations. The primary purpose of EDA is to **understand the structure and nature of the data, identify patterns, relationships, anomalies, and derive insights** that can guide further analysis.

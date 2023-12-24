@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Modeling"
-permalink: /modeling
+permalink: modeling/
 ---
 
 The modeling part of a machine learning project is a crucial phase where the actual machine learning algorithms are selected, trained, and evaluated.

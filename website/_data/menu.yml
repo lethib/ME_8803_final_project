@@ -1,6 +1,6 @@
 - text: EDA
-  url: /EDA/
+  url: EDA
 - text: Feature Engineering
-  url: /feature_engineering/
+  url: feature_engineering
 - text: Modeling
-  url: /modeling/
+  url: modeling

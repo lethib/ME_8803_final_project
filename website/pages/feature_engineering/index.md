@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Feature Engineering"
-permalink: /feature_engineering
+permalink: feature_engineering/
 ---
 
 ```python
