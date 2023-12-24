@@ -33,6 +33,7 @@ url: "https://lethib.github.io" # the base hostname & protocol for your site, e.
 remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 minima:
   skin: auto
