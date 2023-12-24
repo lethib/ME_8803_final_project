@@ -1,10 +1,8 @@
 ---
 layout: page
 title: "Dataset sampling"
-date: 2023-12-13 14:45:35 -0500
+permalink: /EDA/dataset_sampling
 ---
-
-The aim of this notebook is to provide information about features sampling in order to determine which response features are more suitable for the project.
 
 ```python
 import pandas as pd
@@ -26,7 +24,7 @@ df = pd.read_csv("../data/global-data-on-sustainable-energy.csv")
 
 ### 1. Feature Correlation
 
-Correlation coefficients are indicators of the strength of the linear relationship between two different variables. A bigger circle means a higher correlation. The color of the circle indicates the sign of the correlation. A negative correlation (indicated by a blue color) means that the two variables move in opposite directions (when a variable is increasing, the other is decreasing). A positive correlation (indicated by a red color) means that the two variables move in the same direction (when a variable is increasing the other is also increasing).
+Correlation coefficients are **indicators of the strength of the linear relationship between two different variables**. A bigger circle means a higher correlation. The color of the circle indicates the sign of the correlation. A negative correlation (indicated by a blue color) means that the two variables move in opposite directions (when a variable is increasing, the other is decreasing). A positive correlation (indicated by a red color) means that the two variables move in the same direction (when a variable is increasing the other is also increasing).
 
 ```python
 plt.figure(figsize=(20,20))
@@ -39,27 +37,27 @@ plt.savefig("../img/correlation_matrix.png", dpi=200, bbox_inches="tight")
 ```
 
 <p align="center">
-  <img src="../../assets/img/dataset_sampling_5_0.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_sampling_5_0.png" />
 </p>
 
-We can clearly see that some features are highly corrolated to each other but other are not. For instance the `Financial flow to developing countries (US$)` has only poor correlation with all other features. It would be hard to predict this feature based on the other ones. This is the same for the `gdp_growth`, `Longitude`, `Energy intensity level of primary energy` features. It could have been interesting to work with these features but we will not use them for the project.
+We can clearly see that some features are highly corrolated to each other but other are not. For instance the `Financial flow to developing countries (US$)` has only poor correlation with all other features. **It would be hard to predict this feature based on the other ones.** This is the same for the `gdp_growth`, `Longitude`, `Energy intensity level of primary energy` features. It could have been interesting to work with these features but we will not use them for the project.
 
-An interesting thing to note is that the `Latitude` feature is quite positively well corrolated with the `Access to electricity` and `Access to clean fuels for cooking` features. This means that the more you go to the north, the more you have access to electricity and clean fuels for cooking. This is not surprising since the north is more developed than the south (look also for the `gdp_per_capita` correlation score). This is also the case for the `Primary energy consumption par capita` feature. Northern countries consume more energy than southern ones. They tend to have a higher impact on climate change than southern countries.
+An interesting thing to note is that the `Latitude` feature is quite positively well corrolated with the `Access to electricity` and `Access to clean fuels for cooking` features. **This means that the more you go to the north, the more you have access to electricity and clean fuels for cooking. This is not surprising since the north is more developed than the south** (look also for the `gdp_per_capita` correlation score). This is also the case for the `Primary energy consumption par capita` feature. Northern countries consume more energy than southern ones. They tend to have a higher impact on climate change than southern countries.
 
 Now, we can set an objective for the project. We would like to predict:
 
-- The CO2 emissions
-- Primary energy consumption per capita
+- **The CO2 emissions**
+- **Primary energy consumption per capita**
 
 These are mainly regression problems.
 
-Predicting the percentage of Renewables energy as primary energy could have been also interesting to do but the response feature is so poorly filled that we can't use it as a response feature (cf the [dataset description notebook](./dataset_description.ipynb)).
+**Predicting the percentage of Renewables energy as primary energy could have been also interesting to do but the response feature is so poorly filled that we can't use it as a response feature** (cf the [dataset description section](./dataset_description.md/#5-missing-values)).
 
 ### 2. Feature selection
 
 #### Selection for the CO2 emissions prediction
 
-Looking at the heatmap, we can clearly see that a linear relationship exists between some factors and the response (`Value_co2_emissions_kt_by_country`). Taking a threshold of 0.5 for the correlation score will make us takinng important feature to compute a regression after that.
+Looking at the heatmap, we can clearly see that **a linear relationship exists between some factors and the response** (`Value_co2_emissions_kt_by_country`). Taking a threshold of 0.5 for the correlation score will make us takinng important feature to compute a regression after that.
 
 ```python
 co2_cols_to_keep = [column for column in corr_matrix.columns if abs(corr_matrix.loc['Value_co2_emissions_kt_by_country', column]) > 0.5]
@@ -93,7 +91,7 @@ df_co2
     }
 
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe smallest">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -233,7 +231,7 @@ For this dataset, we will have:
 | Land Area (Km2)                     |    X    |          |
 | Value_co2_emissions_kt_by_country   |         |    X     |
 
-Remember also that according to the [dataset description](./dataset_description.ipynb), the `Value_co2_emissions_kt_by_country` has some missing values that we will have to deal with (drop rows or impute values).
+Remember also that according to the [dataset description](./dataset_description.md/#5-missing-values), the `Value_co2_emissions_kt_by_country` has some missing values that we will have to deal with (drop rows or impute values).
 
 #### Selection for the Primary energy consumption per capita
 
@@ -269,7 +267,7 @@ df_pe
     }
 
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe smallest">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -420,7 +418,7 @@ df_co2.shape[0] - df_co2.dropna().shape[0]
 
     548
 
-This dataset does not contain a lot of missing values. If we drop rows that are containing we still have more than 3000 samples to train our model. As we have 5 features, this number if samples is sufficient to train a regression model. There is no need of finding higher dimensional relationship.
+This dataset does not contain a lot of missing values. If we drop rows that are containing we still have more than 3000 samples to train our model. As we have 5 features, this number if samples **is sufficient to train a regression model**. There is no need of finding higher dimensional relationship.
 
 #### Renewable energy consumption prediction
 
@@ -430,7 +428,7 @@ df_pe.shape[0] - df_pe.dropna().shape[0]
 
     622
 
-Same result are the CO2 emission dataset: even though we drop all the rows contaning missing values, we still have around 3000 samples to train our model. This is sufficient for a regression model with 5 features.
+Same result are the CO2 emission dataset: even though we drop all the rows contaning missing values, we still have around 3000 samples to train our model. This is **sufficient for a regression model with 5 features**.
 
 ## Feature Sampling
 
@@ -474,7 +472,7 @@ normalized_df_co2
     }
 
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe smallest">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -583,13 +581,11 @@ normalized_df_co2
 sns.pairplot(normalized_df_co2, height=4, kind="scatter", diag_kind="kde", diag_kws={"linewidth": 1.5, "color": "red"})
 ```
 
-    <seaborn.axisgrid.PairGrid at 0x7fc490e0bf70>
-
 <p align="center">
-  <img src="../../assets/img/dataset_sampling_29_1.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_sampling_29_1.png" />
 </p>
 
-We can clearly see correlations on scatter plot between features. For feature distribution, is hard to see because countries that are emitting a lot of CO2 are so few compared to those who are not. Computing logarithmic values of the dataset could be a possibility but many samples have 0 as value for the `Electricity from nuclear (TWh)` feature. As $log(0)$ is not defined, we can't use this method. Let's try to remove some outliers.
+We can clearly see correlations on scatter plot between features. For feature distribution, is hard to see because **countries that are emitting a lot of CO2 are so few compared to those who are not**. Computing logarithmic values of the dataset could be a possibility but many samples have 0 as value for the `Electricity from nuclear (TWh)` feature. As log(0) is not defined, we can't use this method. Let's try to remove some outliers.
 
 ```python
 top_outliers_co2 = df_co2['Value_co2_emissions_kt_by_country'].quantile(0.95)
@@ -607,12 +603,12 @@ plt.savefig("../img/pairplot_co2.png", dpi=200, bbox_inches="tight")
     (3059, 5)
 
 <p align="center">
-  <img src="../../assets/img/dataset_sampling_31_1.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_sampling_31_1.png" />
 </p>
 
-This is better ! We still have enough samples to train our model and tt is a bit easier to see that our data are quite randomly sampled. We have continuous samples and it might seems that the response feature is following a **Weibull** or **Log-normal** distribution.
+This is better ! We still have enough samples to train our model and it is a bit easier to see that our data are quite randomly sampled. We have continuous samples and it might seems that the response feature is following a **Weibull** or **Log-normal** distribution.
 
-There is also sufficient variation across all features to support statistical modeling.
+There is also **sufficient variation across all features to support statistical modeling**.
 
 ### Primary energy consumption per capita
 
@@ -640,7 +636,7 @@ normalized_df_pe
     }
 
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe smallest">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -749,13 +745,11 @@ normalized_df_pe
 sns.pairplot(normalized_df_pe, height=4, kind="scatter", diag_kind="kde", diag_kws={"linewidth": 1.5, "color": "red"})
 ```
 
-    <seaborn.axisgrid.PairGrid at 0x7fc4a181e8e0>
-
 <p align="center">
-  <img src="../../assets/img/dataset_sampling_35_1.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_sampling_35_1.png" />
 </p>
 
-For this problem, it is easier to see that all the input features are well distributed: our data are more randomly sampled than for the CO2 problem. However, it is a bit more difficult to see that for the response feature. We can try to remove some outliers to have a better distribution.
+For this problem, it is easier to see that all the input features are well distributed: our data are **more randomly sampled than for the CO2 problem**. However, it is a bit more difficult to see that for the response feature. We can try to remove some outliers to have a better distribution.
 
 ```python
 top_outliers_pe = df_pe['Primary energy consumption per capita (kWh/person)'].quantile(0.95)
@@ -773,9 +767,13 @@ plt.savefig("../img/pairplot_pe.png", dpi=200, bbox_inches="tight")
     (3466, 5)
 
 <p align="center">
-  <img src="../../assets/img/dataset_sampling_37_1.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_sampling_37_1.png" />
 </p>
 
 Only by removing 5% of the outliers, we can see that the distribution of the continuous response feature is better ! Moreover, the shape of this distribution looks like a **Log-normal distribution**.
 
-There is also more variation across all these features to support statistical modeling than for the CO2 emissions prediction problem, which is good.
+There is also **more variation across all these features to support statistical modeling than for the CO2 emissions prediction problem**, which is good.
+
+<div class="next-section">
+  <a href="{{ site.baseurl }}/EDA/next_steps">Next Steps section >>></a>
+</div>

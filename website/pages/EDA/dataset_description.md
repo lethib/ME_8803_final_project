@@ -1,10 +1,8 @@
 ---
 layout: page
 title: "Dataset description"
-date: 2023-12-13 14:45:35 -0500
+permalink: /EDA/dataset_description
 ---
-
-The aim of this notebook is to provide some description of the dataset that I will use for my project.
 
 ## 1. How were the data obtained ?
 
@@ -66,7 +64,7 @@ df
     }
 
 </style>
-<table border="1" class="dataframe">
+<table border="1" class="dataframe smallest">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -510,7 +508,7 @@ plt.title('Missing values for each feature in the dataset', fontweight='bold', f
 ```
 
 <p align="center">
-  <img src="../../assets/img/dataset_description_19_1.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_description_19_1.png" />
 </p>
 
 We can clearly see that some features are densed and other are sparsed. Heavily sparsed features (features that we might drop) are the following ones:
@@ -520,7 +518,7 @@ We can clearly see that some features are densed and other are sparsed. Heavily 
 - Value_co2_emissions_kt_by_country
 - Renewables (% equivalent primary energy)
 
-Let's not forget that the entries of the dataset can easily be grouped by countries. We can guess that those thin lines of missing values that we see in the figure might correspond to some years where we don't have data. Thick block of missing values could mean that the country doesn't have any data for this feature.
+Let's not forget that the entries of the dataset can easily be grouped by countries. **We can guess that those thin lines of missing values that we see in the figure might correspond to some years where we don't have data. Thick block of missing values could mean that the country doesn't have any data for this feature**.
 
 The `groupby.count()` pandas' method compute count of group, excluding missing values. We know that the dataset is providing 21 years of data for each country. So, we can use this method to check if we have missing values for some countries.
 
@@ -544,7 +542,7 @@ fig.suptitle('Number of values for each feature in the dataset by country', font
 ```
 
 <p align="center">
-  <img src="../../assets/img/dataset_description_23_1.png" />
+  <img src="{{ site.baseurl }}/assets/img/dataset_description_23_1.png" />
 </p>
 
 We can pinpoint some countries that gave a lot of missing values for all the features:
@@ -554,13 +552,13 @@ We can pinpoint some countries that gave a lot of missing values for all the fea
 - Serbia
 - South Sudan
 
-We also have features that have the same amount of missing values across all the countries. This would mean that those data were not collected for a specific range of years. The features that have this behavior are the following ones:
+**We also have features that have the same amount of missing values across all the countries. This would mean that those data were not collected for a specific range of years**. The features that have this behavior are the following ones:
 
 - Renewable energy share in the total final energy consumption
 - Energy intensity level of primary energy (MJ/$2017 PPP GDP)
 - Value_co2_emissions_kt_by_country
 
-Features that are not heavily sparsed might be imputed in the process of modeling:
+Features that are not heavily sparsed **might be imputed in the process of modeling**:
 
 - Access to clean fuels for cooking
 - Electricity from nuclear (TWh)
@@ -568,3 +566,7 @@ Features that are not heavily sparsed might be imputed in the process of modelin
 - Low-carbon electricity (% electricity)
 - GDP growth
 - GDP per capita
+
+<div class="next-section">
+  <a href="{{ site.baseurl }}/EDA/dataset_sampling">Dataset Sampling section >>></a>
+</div>
